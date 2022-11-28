@@ -1,5 +1,8 @@
 <div class="container">
   <h1> This is PET SHOW page</h1>
+  <% @pet.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <%= @pet.title %>
   <%= @pet.name %>
   <%= @pet.age %>
@@ -7,7 +10,10 @@
   <%= @pet.description %>
   <%= @pet.price %>
   <%= @pet.user.first_name %>
+
 </div>
 <div class="container">
+  <%= link_to "Edit", edit_pet_path(@pet) %>
+  <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <%= link_to "Back", pets_path %>
 </div>

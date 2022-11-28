@@ -1,0 +1,11 @@
+<%= simple_form_for(pet) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :species %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.button :submit %>
+<% end %>
