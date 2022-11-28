@@ -1,0 +1,13 @@
+<div class="container">
+  <h1> This is PET SHOW page</h1>
+  <%= @pet.title %>
+  <%= @pet.name %>
+  <%= @pet.age %>
+  <%= @pet.species %>
+  <%= @pet.description %>
+  <%= @pet.price %>
+  <%= @pet.user.first_name %>
+</div>
+<div class="container">
+  <%= link_to "Back", pets_path %>
+</div>

@@ -1,0 +1,10 @@
+<%= simple_form_for @pet, url: pets_path do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :species %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
