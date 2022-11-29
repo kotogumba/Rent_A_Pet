@@ -15,7 +15,13 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.user = current_user
     @booking.total_price = @booking.calculate_total_price
-    if @booking.save
+    if @booking.start_date < Date.today
+      flash[:alert] = "You can't book a pet in the past"
+      redirect_to pet_path(@pet)
+    elsif @booking.end_date < @booking.start_date
+      flash[:alert] = "You can't book a pet with an end date before the start date"
+      redirect_to pet_path(@pet)
+    elsif @booking.save
       redirect_to booking_path(@booking)
     else
       render "pets/show"
