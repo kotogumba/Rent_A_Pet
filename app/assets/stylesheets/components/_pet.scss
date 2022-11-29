@@ -1,0 +1,43 @@
+.pet-grid {
+  padding: 16px 16px 16px 16px;
+  width: 100vw;
+}
+
+.pet-ad {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+
+.pet-img-tag {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.pet-infos {
+  h3, p {
+    margin: 0px;
+  }
+
+}
+.show-button {
+   a {
+    text-decoration: none;
+  }
+}
+
+.pet-ad {
+  pet-infos {
+  padding: 5px 5px 5px 5px;
+  }
+}
+
+.button-map {
+  position: sticky;
+  top: 25px;
+  z-index: 50;
+}
