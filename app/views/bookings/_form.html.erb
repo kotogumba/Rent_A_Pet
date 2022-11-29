@@ -1,0 +1,7 @@
+<%# update booking %>
+<%= simple_form_for([pet, booking]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%# show total_price from booking %>
+  <%= f.submit %>
+<% end %>
