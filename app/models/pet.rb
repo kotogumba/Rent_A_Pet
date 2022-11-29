@@ -6,7 +6,7 @@ class Pet < ApplicationRecord
   validates :price, presence: true
   validates :age, presence: true
   validates :photos, presence: true
-  has_many_attached :photos
+  has_one_attached :photo
   belongs_to :user
   has_many :bookings, dependent: :destroy
 end
