@@ -1,6 +1,4 @@
-
 <div class="container">
-
   <div id="rail" class="carousel slide center" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -17,32 +15,31 @@
       </div>
     </div>
     <div class="button d-flex flex-column">
-    <a href="/index" type="button" class="btn btn-outline-dark pet">Find a pet</a>
+      <%= link_to "Find a pet", pets_path, class: "btn btn-outline-dark pet" %>
     </div>
   </div>
 
-    <h2 class="text-center p-3 mt-2" id="how-it-works">How it works</h2>
-
-      <div class="card-category">
-        <div class="card border-0">
-            <%= image_tag "look_for_a_pet.jpg", class: "card-img-top" %>
-          <div class="card-body">
-            <p class="card-text">Look for a pet</p>
-          </div>
-        </div>
-
-         <div class="card border-0">
-            <%= image_tag "make_an_appointment.jpg", class: "card-img-top" %>
-          <div class="card-body">
-            <p class="card-text">Make an appointment</p>
-          </div>
-        </div>
-
-         <div class="card border-0">
-            <%= image_tag "new_friend.jpg", class: "card-img-top" %>
-          <div class="card-body">
-            <p class="card-text">Spend time with your new furry friend</p>
-          </div>
-        </div>
+  <h2 class="text-center p-3 mt-2" id="how-it-works">How it works</h2>
+  <div class="card-category">
+    <div class="card border-0">
+      <%= image_tag "look_for_a_pet.jpg", class: "card-img-top" %>
+      <div class="card-body">
+        <p class="card-text">Look for a pet</p>
       </div>
+    </div>
+
+    <div class="card border-0">
+      <%= image_tag "make_an_appointment.jpg", class: "card-img-top" %>
+      <div class="card-body">
+        <p class="card-text">Make an appointment</p>
+      </div>
+    </div>
+
+    <div class="card border-0">
+      <%= image_tag "new_friend.jpg", class: "card-img-top" %>
+      <div class="card-body">
+        <p class="card-text">Spend time with your new furry friend</p>
+      </div>
+    </div>
+  </div>
 </div>
