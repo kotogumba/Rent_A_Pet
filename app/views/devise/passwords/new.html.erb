@@ -1,18 +1,73 @@
-<h2>Forgot your password?</h2>
+<style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background: rgb(204,213,212);
+    }
+    .row{
+      background:  rgb(218,218,218);
+      border-radius: 30px;
+      box-shadow: 12px 12px 22px rgb(53,45,42);
+    }
+    img{
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+    }
+    .btn1{
+      border: none;
+      outline: none;
+      height: 58px;
+      width: 100%;
+      background-color: black;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .btn1:hover{
+      background: white;
+      color: black;
+    }
+    /* .logo{
+      width: 35px;
+      height: 35px;
+    } */
+</style>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+<section class="Form my-4 mx-5">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-lg-7 px-5 mt-5 mb-3">
+        <div class="form-row d-flex justify-content-end">
+          <div class="col-lg-7 text-end">
+            <%# <%= image_tag "paw.png", class:"logo", alt:"logo" %>
+            <h1 class="font-weight-bold py-3">Rent a Pet</h1>
+            <h4>Forgot your password?</h4>
+            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email", class:"form-control my-2 p-3" } %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "Send me reset password instructions", class: "btn1 mt-3 mb-5" %>
+              </div>
+            <% end %>
+            <%= render "devise/shared/links" %>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+      <%= image_tag "suspicious_password_doggo.jpg", class:"img-fluid", alt:"a suspicious looking doggo" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
