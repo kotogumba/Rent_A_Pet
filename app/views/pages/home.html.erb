@@ -1,49 +1,50 @@
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%=image_tag 'cat.jpg', class: "d-block w-100" %>
-      <div class="carousel-caption d-none d-md-block">
-    <h5>Rent a Pet</h5>
-    <p>...</p>
-  </div>
+
+<div class="container">
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%=image_tag 'cat.jpg', class: "d-block w-100", style: "height: 700px; object-fit: cover;" %>
+      </div>
+      <div class="carousel-item">
+        <%=image_tag 'dog_friend.jpg', class: "d-block w-100", style: "height: 700px; object-fit: cover;" %>
+      </div>
+      <div class="carousel-item">
+        <%=image_tag 'pug.jpg', class: "d-block w-100", style: "height: 700px; object-fit: cover;" %>
+      </div>
     </div>
-    <div class="carousel-item">
-      <%=image_tag 'pug.jpg', class: "d-block w-100" %>
-      <div class="carousel-caption d-none d-md-block">
-    <h5>...</h5>
-    <p>...</p>
-  </div>
-    </div>
-    <div class="carousel-item">
-      <%=image_tag 'pug.jpg', class: "d-block w-100" %>
-      <div class="carousel-caption d-none d-md-block">
-    <h5>...</h5>
-    <p>...</p>
-  </div>
+    <div class="button d-flex flex-column">
+    <a href="/index" type="button" class="btn btn-outline-dark pet m-2">Find a pet</a>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+
+
+
+
+
+
+    <h2 class="text-center p-3 mt-2" id="how-it-works">How it works</h2>
+
+      <div class="card-category">
+        <div class="card border-0">
+            <%= image_tag "look_for_a_pet.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-text">Look for a pet</p>
+          </div>
+        </div>
+
+         <div class="card border-0">
+            <%= image_tag "make_an_appointment.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-text">Make an appointment</p>
+          </div>
+        </div>
+
+         <div class="card border-0">
+            <%= image_tag "new_friend.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-text">Spend time with your new furry friend</p>
+          </div>
+        </div>
+      </div>
 </div>
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
-</div>
-
-
