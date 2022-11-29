@@ -1,19 +1,33 @@
 <div class="container">
-  <h1> This is PET SHOW page</h1>
+  <h1><%= @pet.title %></h1>
   <% @pet.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
-  <%= @pet.title %>
-  <%= @pet.name %>
-  <%= @pet.age %>
-  <%= @pet.species %>
-  <%= @pet.description %>
-  <%= @pet.price %>
-  <%= @pet.user.first_name %>
-
 </div>
 <div class="container">
-  <%= link_to "Edit", edit_pet_path(@pet) %>
-  <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <%= link_to "Back", pets_path %>
+
+  <div class="row-cols-auto">
+    <div class="row">
+      <div class="col-8">
+
+        <p>Name: <%= @pet.name %></p>
+        <p>Age: <%= @pet.age %></p>
+        <p>Species: <%= @pet.species %></p>
+        <p>Price: <%= @pet.price %></p>
+        <p>Description: <%= @pet.description %></p>
+
+      </div>
+      <div class="col-4">
+        <div class="border p-3 bg-white shadow-lg p-3 mb-5 bg-body rounded sticky-top">
+          <%= render "bookings/form", booking: @booking, pet: @pet%>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-primary" %>
+  <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
+  <%= link_to "Back", pets_path, class: "btn btn-primary" %>
 </div>
