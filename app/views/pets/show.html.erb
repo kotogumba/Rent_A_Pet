@@ -8,17 +8,20 @@
 
   <div class="row-cols-auto">
     <div class="row">
-      <div class="col">
+      <div class="col-8">
 
         <p>Name: <%= @pet.name %></p>
         <p>Age: <%= @pet.age %></p>
         <p>Species: <%= @pet.species %></p>
         <p>Price: <%= @pet.price %></p>
         <p>Description: <%= @pet.description %></p>
-        
+
       </div>
-      <div class="col">
-        <%= render "bookings/form", booking: @booking, pet: @pet %>
+      <div class="col-4">
+        <div class="border p-3 bg-white shadow-lg p-3 mb-5 bg-body rounded sticky-top">
+          <%= render "bookings/form", booking: @booking, pet: @pet%>
+        </div>
+
       </div>
     </div>
   </div>
