@@ -14,6 +14,7 @@
 .home-bar {
   a{
     text-decoration: none;
+    color: #0E0000;
   }
 }
 
@@ -39,8 +40,7 @@
 
 .pet-grid {
   h1 {
-    font-weight: 500;
-    font-style: bold;
+    font-weight: bold;
     font-family: "CircularStd-Black", "Helvetica", "sans-serif";
     font-size: 16px;
   }
@@ -58,9 +58,14 @@
   padding: 5px 5px 5px;
   color: #0E0000;
 
+  .btn.btn-light {
+    color: grey;
+
+  }
+
   h3 {
     margin: 0px;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14px;
   }
 

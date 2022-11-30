@@ -2,7 +2,7 @@
   <div>
 
       <div class="home-bar">
-        <div class="home-bar-item"><i class="fa-solid fa-plus"></i><%= link_to " New Pet", new_pet_path%></div>
+        <div class="home-bar-item"><button type="button" class="btn btn-light"><i class="fa-solid fa-plus"></i><%= link_to " New Pet", new_pet_path%></button></div>
         <div class="home-bar-item"><div class="input-group rounded">
           <input type="search" class="form-control rounded" placeholder="Search for a pet" aria-label="Search" aria-describedby="search-addon" />
           <span class="input-group-text border-0" id="search-addon">
@@ -33,7 +33,6 @@
           <% end %>
         </div>
     </div>
-
   </div>
-    <button class="button-map">Show on map <i class="fa-regular fa-map"></i><%= link_to "", pets_path %></button>
+      <button class="button-map">Show on map <i class="fa-regular fa-map"></i><%= link_to "", pets_path %></button>
 </div>
