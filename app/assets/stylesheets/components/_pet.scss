@@ -1,0 +1,94 @@
+.form-control.rounded {
+  background-color: white;
+}
+
+.home-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 16px;
+  color: #0E0000;
+}
+
+.home-bar {
+  a{
+    text-decoration: none;
+    color: #0E0000;
+  }
+}
+
+.pet-ad:hover {
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+    text-decoration: none;
+
+}
+
+.pet-ad {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.pet-grid {
+  padding: 16px 16px 16px 16px;
+  width: 100%;
+}
+
+.pet-grid {
+  h1 {
+    font-weight: bold;
+    font-family: "CircularStd-Black", "Helvetica", "sans-serif";
+    font-size: 16px;
+  }
+}
+
+.pet-img-tag {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.pet-infos {
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  padding: 5px 5px 5px;
+  color: #0E0000;
+
+  .btn.btn-light {
+    color: grey;
+
+  }
+
+  h3 {
+    margin: 0px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  h2 {
+    margin: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    font-style: bold;
+  }
+
+  p {
+    margin: 0px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.show-button {
+   a {
+    text-decoration: none;
+  }
+}
