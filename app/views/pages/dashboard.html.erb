@@ -32,8 +32,23 @@
       <p> End date: <%= booking.end_date %> </p>
       <p>Status: <%= booking.confirmed %> </p>
       <p>Price: <%= booking.total_price %> </p>
-      <%= link_to "Accept", booking_path(booking), method: :patch, class: "btn btn-success" %>
-      <%= link_to "Deny", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+      <%# if booking.confirmed == false, then  %>
+      <% if booking.confirmed == false %>
+        <%= button_to "Accept", booking_path(booking, confirmed: true), method: :patch, class: "btn btn-success" %>
+        <%= button_to "Decline", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+      <% end %>
+
     <% end %>
+  <% end %>
+</div>
+<div class="container pb-3">
+
+  <h1> Bookings you made </h1>
+  <% @bookings.each do |booking| %>
+    <h2> Your booking for <%= booking.pet.name %> </h2>
+    <%= booking.start_date %>
+    <%= booking.end_date %>
+    <%= booking.confirmed %>
+    <%= booking.total_price %>
   <% end %>
 </div>

@@ -1,34 +1,78 @@
-<div class="container">
-  <h1><%= @pet.title %></h1>
-  <% @pet.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-</div>
-<div class="container">
+<style>
+  .main{
+    background:  rgb(218,218,218);
+    box-shadow: 12px 12px 22px rgb(53,45,42);
+  }
+  .btn1{
+      border: 1px solid;
+      border-color: black;
+      background-color: white;
+      color: Black;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .btn1:hover{
+      background: white;
+      color: black;
+    }
+    .btn2{
+      border: none;
+      outline: none;
+      background-color: #FF6961;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .btn2:hover{
+      background: red;
+      color: black;
+    }
+    .image{
+      width: 100%;
+      border-radius: 5px;
+      max-height: 600px;
 
-  <div class="row-cols-auto">
-    <div class="row">
-      <div class="col-8">
+    }
+    .limit{
+      max-width: 800px;
+    }
+    .bt{
+      max-width: 150px;
+    }
+</style>
 
-        <p>Name: <%= @pet.name %></p>
-        <p>Age: <%= @pet.age %></p>
-        <p>Species: <%= @pet.species %></p>
-        <p>Price: <%= @pet.price %></p>
-        <p>Description: <%= @pet.description %></p>
-
+<div class="container mx-auto limit">
+  <div class="card mx-auto">
+      <div class="card-img-top">
+        <% @pet.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, :crop => "fill", :radius => 10, class:"image" %>
+        <% end %>
       </div>
-      <div class="col-4">
-        <div class="border p-3 bg-white shadow-lg p-3 mb-5 bg-body rounded sticky-top">
+    <div class="container" >
+      <div class="row title text-center mt-3 mb-4 border-bottom">
+        <h1><%= @pet.title %></h1>
+      </div>
+    <div class="row mb-4 mx-3">
+      <div class="col-12 col-lg-6">
+        <p><h5>Name: <%= @pet.name %></h5></p>
+        <p><h5>Age: <%= @pet.age %></h5></p>
+        <p><h5>Species: <%= @pet.species %></h5></p>
+        <p><h5>Price: <%= @pet.price %></h5></p>
+        <p><h5>Description:</h5></p>
+        <h6><%= @pet.description %></h6>
+      </div>
+      <div class="col-12 col-lg-6 my-auto">
+        <div class="border bg-white shadow-lg p-3 bg-body rounded date">
           <%= render "bookings/form", booking: @booking, pet: @pet%>
         </div>
+      </div>
+    </div>
+      <div class="row mt-3 mb-4 mx-4 d-flex">
+          <%= link_to "Back", pets_path, class: "btn btn1 bt my-1 mx-auto" %>
 
+          <%#= link_to "Edit", edit_pet_path(@pet), class: "btn btn1 bt my-1 mx-auto" %>
+          <%#= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn2 bt my-1 mx-auto" %>
       </div>
     </div>
   </div>
 </div>
-<div class="container">
-  <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-primary" %>
-  <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
-  <%= link_to "Back", pets_path, class: "btn btn-primary" %>
-</div>
-

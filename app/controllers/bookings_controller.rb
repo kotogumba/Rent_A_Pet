@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
       flash[:alert] = "You can't book a pet with an end date before the start date"
       redirect_to pet_path(@pet)
     elsif @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to "/dashboard", status: :see_other
     else
       render "pets/show"
     end
@@ -30,14 +30,25 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+
+    if params[:confirmed] == "true"
+      @booking.confirmed = true
+      @booking.save
+    elsif params[:confirmed] == "false"
+      @booking.confirmed = false
+      @booking.save
+    else
+      @booking.update(booking_params)
+    end
+
+    redirect_to "/dashboard", status: :see_other
   end
 
   def destroy
     @booking = Booking.find(params[:id])
+
     @booking.destroy
-    redirect_to bookings_path, status: :see_other
+    redirect_to "/dashboard", status: :see_other
   end
 
   private

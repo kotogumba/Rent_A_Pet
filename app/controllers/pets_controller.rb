@@ -2,7 +2,13 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pets = Pet.all
+    # @pets = Pet.all
+    if params[:query].present?
+      @query = params[:query]
+      @pets = Pet.where("lower(name) LIKE ? or lower(description) LIKE ? or lower(species) LIKE ? or lower(title) LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
@@ -24,10 +30,15 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
-    if @pet.save
-      redirect_to pets_path
-    else
-      render :new
+
+    respond_to do |format|
+      if @pet.save
+        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.json { render :show, status: :created, location: @pet }
+      else
+        format.html { render :new }
+        format.json { render json: @pet.errors, status: :unprocessable_entity }
+      end
     end
   end
 
