@@ -4,5 +4,5 @@
 <%= simple_form_for [pet, booking], data: { controller: 'flatpickr' } do |f| %>
   <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } }, label: false, placeholder: "Start Date" %>
   <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } }, label: false, placeholder: "End Date" %>
-  <%= f.submit 'Book', class: "btn btn-primary btn-lg btn-block btn-booking" %>
+  <%= f.submit 'Book', class: "btn btn-success btn-lg btn-block btn-booking" %>
 <% end %>
