@@ -3,17 +3,26 @@
 
       <div class="home-bar">
         <div class="home-bar-item"><button type="button" class="btn btn-light"><i class="fa-solid fa-plus"></i><%= link_to " New Pet", new_pet_path%></button></div>
-        <div class="home-bar-item"><div class="input-group rounded">
-          <input type="search" class="form-control rounded" placeholder="Search for a pet" aria-label="Search" aria-describedby="search-addon" />
-          <span class="input-group-text border-0" id="search-addon">
-            <i class="fas fa-search"></i>
-          </span>
-        </div>
+        <div class="home-bar-item">
+
+        <form class="input-group rounded">
+          <input class="form-control rounded" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
+          <button class="input-group-text border-0" type="submit">Search</button>
+        </form>
+
+
         </div>
       </div>
 
     <div class="pet-grid">
-      <h1>Find your new furry friend amongst our <% @pets.size %> pets</h1>
+
+       <% if @query %>
+          <p>You searched for <strong><%= @query %></strong>. We found <%= @pets.count %> pets matching your query on our website.</p>
+        <% else %>
+          <h1>Find your new furry friend amongst our <% @pets.size %> pets</h1>
+        <% end %>
+
+
         <div class="row">
           <% @pets.each do |pet| %>
 
