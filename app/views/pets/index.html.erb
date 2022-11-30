@@ -2,7 +2,7 @@
   <div>
 
       <div class="home-bar">
-        <div class="home-bar-item"><button type="button" class="btn btn-light"><i class="fa-solid fa-plus"></i><%= link_to " New Pet", new_pet_path%></button></div>
+        <div class="home-bar-item"><button type="button" class="input-group-text border-0"><i class="fa-solid fa-plus"></i><%= link_to " New Pet", new_pet_path%></button></div>
         <div class="home-bar-item">
 
         <form class="input-group rounded">
@@ -19,18 +19,18 @@
        <% if @query %>
           <p>You searched for <strong><%= @query %></strong>. We found <%= @pets.count %> pets matching your query on our website.</p>
         <% else %>
-          <h1>Find your new furry friend amongst our <% @pets.size %> pets</h1>
+          <h1>Find your new furry friend amongst our <% @pets.count %> pets</h1>
         <% end %>
 
 
-        <div class="row">
+        <div class="row row-cols-auto">
           <% @pets.each do |pet| %>
 
-            <div class="co-12 col-sm-6 col-md-3 mb-3">
+            <div class="col">
 
               <%= link_to pet_path(pet) do %>
                 <div class="pet-ad">
-                  <%=image_tag 'pomeranian.jpg', class: "pet-img-tag"%>
+        <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"pet-img-tag" %>
                     <div class="pet-infos">
                         <h2><%= pet.title %></h2>
                         <h3><%= pet.name %></h3>

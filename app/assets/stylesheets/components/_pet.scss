@@ -1,3 +1,5 @@
+
+
 .form-control.rounded {
   background-color: white;
 }
@@ -81,14 +83,8 @@
     font-weight: 500;
     font-size: 16px;
   }
-
-  a {
-    text-decoration: none;
-  }
 }
 
-.show-button {
-   a {
-    text-decoration: none;
-  }
+.a {
+    text-decoration: none !important;
 }

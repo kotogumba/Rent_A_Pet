@@ -5,7 +5,7 @@ class PetsController < ApplicationController
     # @pets = Pet.all
     if params[:query].present?
       @query = params[:query]
-      @pets = Pet.where("lower(name) LIKE ? or lower(description) LIKE ? or lower(species) LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+      @pets = Pet.where("lower(name) LIKE ? or lower(description) LIKE ? or lower(species) LIKE ? or lower(title) LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     else
       @pets = Pet.all
     end
