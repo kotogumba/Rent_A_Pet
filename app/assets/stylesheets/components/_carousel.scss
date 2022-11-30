@@ -1,0 +1,16 @@
+.button {
+  position: absolute;
+}
+
+.pet {
+  background-color: white;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

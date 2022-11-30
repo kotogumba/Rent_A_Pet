@@ -1,0 +1,33 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.2);
+}
+
+.card-category {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
+
+.card-text {
+  font-size: 18px;
+  text-align: center;
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media (min-width: 576px) {
+  .card-category {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-category {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
