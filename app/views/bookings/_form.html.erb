@@ -1,8 +1,9 @@
 
 <%= simple_form_for [pet, booking], data: { controller: 'flatpickr' } do |f| %>
-  <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } }, label: false, placeholder: "Start Date" %>
-  <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } }, label: false, placeholder: "End Date" %>
-  <p>Price: <%= pet.price %>$/day</p>
-  <p>Total price: </p>
-  <%= f.submit 'Book', class: "btn btn-success btn-lg btn-block btn-booking" %>
+  <p><span id="price" style="font-weight: bold; font-size: 24px;" data-price=<%= pet.price %> >€<%= pet.price %></span> day</p>
+  <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime", action: "change->flatpickr#input" } }, label: false, placeholder: "Start Date" %>
+  <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime", action: "change->flatpickr#input" } }, label: false, placeholder: "End Date" %>
+  <%= f.submit 'Book', class: "btn btn-primary btn-lg btn-block btn-booking" %>
+  <hr>
+  <p id="total-price" class="d-none" >Total price: <span data-flatpickr-target="totalPrice"></span>€</p>
 <% end %>
