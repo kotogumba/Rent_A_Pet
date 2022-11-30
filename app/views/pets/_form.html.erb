@@ -1,11 +1,72 @@
-<%= simple_form_for(pet) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :title %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :species %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit %>
-<% end %>
+<style>
+    *{
+      color: white;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background: url("https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80") ;
+    }
+    .btn1{
+      border: none;
+      outline: none;
+      height: 58px;
+      width: 100%;
+      background-color: black;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .btn1:hover{
+      background: white;
+      color: black;
+    }
+</style>
+
+
+<section class="Form my-4 mx-5">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 px-5 pt-5 bg-dark bg-opacity-50 rounded">
+        <h1 class="text-center font-weight-bold py-3 mt-3">Add a new pet</h1>
+        <h4 class="text-center">for people to view</h4>
+          <%= simple_form_for(pet) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :title,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "title", class:"form-control my-2 p-3" } %>
+              <%= f.input :name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "name", class:"form-control my-2 p-3" } %>
+              <%= f.input :age,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "age", class:"form-control my-2 p-3" } %>
+              <%= f.input :species,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "species", class:"form-control my-2 p-3" } %>
+              <%= f.input :description,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "description", class:"form-control my-2 p-3" } %>
+              <%= f.input :price,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "price", class:"form-control my-2 p-3" } %>
+              <%= f.input :photos, as: :file,
+                          input_html: { multiple: true, class:"form-control my-2 p-3" } %>
+            </div>
+            <div class="form-actions">
+            <%= f.button :submit, "Add Pet", class:"btn1 mt-3 mb-3"%>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</section>

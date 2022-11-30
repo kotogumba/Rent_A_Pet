@@ -11,7 +11,6 @@ require "open-uri"
 Pet.destroy_all
 User.destroy_all
 
-
 5.times do
   User.create(
     first_name: Faker::Internet.username,
