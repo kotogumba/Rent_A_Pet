@@ -1,6 +1,30 @@
-<div class="container">
+<div class="container pb-3">
   <h1> Hello, <%= current_user.first_name %> <%=  current_user.last_name %> </h1>
-  <h1> Booking offers for your pets </h1>
+  <h2> Here are your bookings </h2>
+
+<div class="all-bookings">
+    <% @bookings.each do |booking| %>
+      <div class="card-bookings">
+        <p><%= cl_image_tag booking.pet.photos.first.key, crop: :fill, class:"card-bookings-img" %></p>
+          <h2>Your booking for <%= booking.pet.name %> </h2>
+            <div class="card-bookings-info">
+              <p>Starts at <%= booking.start_date %> and ends at <%= booking.end_date %>.</p>
+              <p><%if booking.confirmed == true %>
+                  <p>Booking confirmed</p>
+                <% else %>
+                  <p>Booking not yet confirmed</p>
+                <% end %></p>
+            <p>The total price is €<%= booking.total_price %>.</p>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
+
+
+<div class="container">
+  <h1>Booking requests for your pets </h1>
   <%  @pets.each do |pet| %>
     <% pet.bookings.each do |booking| %>
       <h2> <%= pet.name %> </h2>
