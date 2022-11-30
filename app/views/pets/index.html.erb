@@ -1,29 +1,39 @@
 <div class="home">
-  <button class="button-map">Show on map<%= link_to "", pets_path %></button>
-<div>
-  <%= link_to "New Pet", new_pet_path, class:"btn-primary"%>
+  <div>
 
-<div class="pet-grid">
-  <div class="row">
-    <% @pets.each do |pet| %>
-      <div class="co-12 col-sm-6 col-md-3 mb-3">
-        <div class="pet-ad">
-
-          <%=image_tag 'pomeranian.jpg', class: "pet-img-tag"%>
-
-          <div class="pet-infos">
-              <h3><%= pet.title %></h3>
-              <h3><%= pet.name %></h3>
-              <p>80.00 euros</p>
-              <div class="show-button"><p><%= link_to "Show", pet_path(pet) %></p></div>
-          </div>
-
+      <div class="home-bar">
+        <div class="home-bar-item"><i class="fa-solid fa-plus"></i><%= link_to " New Pet", new_pet_path%></div>
+        <div class="home-bar-item"><div class="input-group rounded">
+          <input type="search" class="form-control rounded" placeholder="Search for a pet" aria-label="Search" aria-describedby="search-addon" />
+          <span class="input-group-text border-0" id="search-addon">
+            <i class="fas fa-search"></i>
+          </span>
         </div>
-
-
+        </div>
       </div>
-    <% end %>
+
+    <div class="pet-grid">
+      <h1>Find your new furry friend among our <% @pets.size %> pets</h1>
+        <div class="row">
+          <% @pets.each do |pet| %>
+
+            <div class="co-12 col-sm-6 col-md-3 mb-3">
+
+              <%= link_to pet_path(pet) do %>
+                <div class="pet-ad">
+                  <%=image_tag 'pomeranian.jpg', class: "pet-img-tag"%>
+                    <div class="pet-infos">
+                        <h2><%= pet.title %></h2>
+                        <h3><%= pet.name %></h3>
+                        <p><%= pet.price %>&euro;</p>
+                    </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+
   </div>
-</div>
-</div>
+    <button class="button-map">Show on map <i class="fa-regular fa-map"></i><%= link_to "", pets_path %></button>
 </div>
