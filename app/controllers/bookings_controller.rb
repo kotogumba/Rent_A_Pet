@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
       @booking.update(booking_params)
     end
 
-    redirect_to booking_path(@booking)
+    redirect_to "/dashboard", status: :see_other
   end
 
   def destroy
