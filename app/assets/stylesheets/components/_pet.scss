@@ -14,7 +14,7 @@
 }
 
 .home-bar {
-  a{
+  a {
     text-decoration: none;
     color: #0E0000;
   }
@@ -29,6 +29,7 @@
 
 .pet-ad {
   overflow: hidden;
+  width: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -45,11 +46,16 @@
     font-family: "CircularStd-Black", "Helvetica", "sans-serif";
     font-size: 16px;
   }
+
+  a {
+    text-decoration: none;
+    color: #0E0000;
+  }
 }
 
 .pet-img-tag {
-  width: 100%;
-  border-radius: 10px;
+  width: 100px;
+  border-radius: 3px;
   object-fit: cover;
   height: 200px;
 }

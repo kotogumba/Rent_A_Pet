@@ -19,21 +19,15 @@
        <% if @query %>
           <p>You searched for <strong><%= @query %></strong>. We found <%= @pets.count %> pets matching your query on our website.</p>
         <% else %>
-          <h1>Find your new furry friend amongst our <% @pets.count %> pets</h1>
+          <h1>Find your new furry friend amongst our <%= @pets.count %> pets</h1>
         <% end %>
-
 
         <div class="row row-cols-auto">
           <% @pets.each do |pet| %>
             <div class="col">
               <%= link_to pet_path(pet) do %>
-                <div class="pet-ad">
+                <div class="pet-ad mb-3">
                   <div id="carousel<%=pet.name%>" class="carousel slide" data-bs-ride="true">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"pet-img-tag d-block w-100" %>
@@ -55,9 +49,10 @@
                   </div>
 
                   <div class="pet-infos">
-                      <h2><%= pet.title %></h2>
-                      <h3><%= pet.name %></h3>
-                      <p><%= pet.price %>&euro;</p>
+                      <h1><%= pet.title %></h1>
+                      <h2><%= pet.name %></h2>
+                      <hr>
+                      <p><%= pet.price %>&euro; day</p>
                   </div>
                 </div>
               <% end %>
