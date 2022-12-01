@@ -14,7 +14,7 @@
 }
 
 .home-bar {
-  a{
+  a {
     text-decoration: none;
     color: #0E0000;
   }
@@ -46,11 +46,16 @@
     font-family: "CircularStd-Black", "Helvetica", "sans-serif";
     font-size: 16px;
   }
+
+  a {
+    text-decoration: none;
+    color: #0E0000;
+  }
 }
 
 .pet-img-tag {
   width: 100px;
-  border-radius: 10px;
+  border-radius: 3px;
   object-fit: cover;
   height: 200px;
 }
