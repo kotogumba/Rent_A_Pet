@@ -23,11 +23,10 @@
         <% end %>
 
 
-        <div class="row row-cols-auto">
+        <div class="row">
           <% @pets.each do |pet| %>
 
-            <div class="col">
-
+        <div class="co-12 col-sm-6 col-md-3 mb-3">
               <%= link_to pet_path(pet) do %>
                 <div class="pet-ad">
         <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"pet-img-tag" %>
