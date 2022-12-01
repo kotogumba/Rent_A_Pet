@@ -1,3 +1,16 @@
+.h1-dashboard {
+  margin-top: 30px;
+  margin-left: 143px;
+  margin-bottom: 30px;
+}
+
+
+
+.container-my-pets{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .card-bookings {
   overflow: hidden;
   height: 120px;
@@ -5,25 +18,30 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-
+  margin: 16px;
+  border-radius: 10px;
 }
 
 .card-bookings-img {
-  height: 100%;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
+  border-radius: 50%;
+  margin: 5px 5px 5px 10px;
+  box-shadow: 10px 10px 5px -4px rgba(227,227,227,0.54);
+
 }
 
 .card-bookings h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  border-bottom: solid lightgray 0.1px
 }
 
 .card-bookings p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
 }
@@ -31,3 +49,23 @@
 .card-bookings .card-bookings-info {
   padding: 16px;
 }
+
+.nav-pills .nav-link.active {
+  background-color: #DBA39A !important;
+  color: white !important;
+}
+
+.nav-pills .nav-link {
+  background-color: #F4F4F4;
+  color: black;
+}
+
+.fa-xmark::before {
+  color: red;
+}
+
+.fa-check::before {
+  color: green;
+}
+
+
