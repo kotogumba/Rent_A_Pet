@@ -19,7 +19,7 @@
        <% if @query %>
           <p>You searched for <strong><%= @query %></strong>. We found <%= @pets.count %> pets matching your query on our website.</p>
         <% else %>
-          <h1>Find your new furry friend amongst our <% @pets.count %> pets</h1>
+          <h1>Find your new furry friend among our <%= @pets.count %> pets</h1>
         <% end %>
 
 
