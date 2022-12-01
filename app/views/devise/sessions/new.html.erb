@@ -5,10 +5,10 @@
       box-sizing: border-box;
     }
     body{
-      background: rgb(248,211,183);
+      background: rgb(251,244,236);
     }
     .row{
-      background: rgb(191,133,104);
+      background: rgb(216,174,151);
       border-radius: 30px;
       box-shadow: 12px 12px 22px rgb(53,45,42);
     }
@@ -31,10 +31,6 @@
       background: white;
       color: black;
     }
-    /* .logo{
-      width: 35px;
-      height: 35px;
-    } */
 </style>
 
 <section class="Form my-4 mx-5">
@@ -46,7 +42,6 @@
       <div class="col-lg-7 px-5 pt-5">
         <div class="form-row">
           <div class="col-lg-7">
-            <%# <%= image_tag "paw.png", class:"logo", alt:"logo" %>
             <p><h1 class="font-weight-bold py-3">Rent a Pet</h1></p>
             <p><h4>Sign into your account</h4></p>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
