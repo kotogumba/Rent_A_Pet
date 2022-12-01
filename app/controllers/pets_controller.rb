@@ -9,6 +9,13 @@ class PetsController < ApplicationController
     else
       @pets = Pet.all
     end
+
+    @markers = @pets.geocoded.map do |pet|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
@@ -30,6 +37,7 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+    @pet.address = current_user.address
 
     respond_to do |format|
       if @pet.save
