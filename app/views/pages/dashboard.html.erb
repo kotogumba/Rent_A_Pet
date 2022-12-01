@@ -21,7 +21,7 @@
                       <div class="card-bookings">
                         <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"card-bookings-img" %>
                         <div class="card-bookings-info">
-                          <h2>Your booking for <%= pet.name %> </h2>
+                          <h2><%= pet.name %> </h2>
                           <p>From <%= booking.start_date.strftime("%A, %b %d") %> until <%= booking.end_date.strftime("%A, %b %d") %>.</p>
                           <p><i class="fa-solid fa-check"></i> Confirmed</p>
                           <p>Total: €<%= booking.total_price %></p>
