@@ -25,17 +25,40 @@
 
         <div class="row row-cols-auto">
           <% @pets.each do |pet| %>
-
             <div class="col">
-
               <%= link_to pet_path(pet) do %>
                 <div class="pet-ad">
-        <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"pet-img-tag" %>
-                    <div class="pet-infos">
-                        <h2><%= pet.title %></h2>
-                        <h3><%= pet.name %></h3>
-                        <p><%= pet.price %>&euro;</p>
+                  <div id="carousel<%=pet.name%>" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"pet-img-tag d-block w-100" %>
+                      </div>
+                      <% pet.photos[1..].each do |photo| %>
+                        <div class="carousel-item">
+                          <%= cl_image_tag photo.key, crop: :fill, class:"pet-img-tag d-block w-100" %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                  <div class="pet-infos">
+                      <h2><%= pet.title %></h2>
+                      <h3><%= pet.name %></h3>
+                      <p><%= pet.price %>&euro;</p>
+                  </div>
                 </div>
               <% end %>
             </div>
