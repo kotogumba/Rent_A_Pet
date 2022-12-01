@@ -4,16 +4,14 @@
   margin-bottom: 30px;
 }
 
-
-
-.container-my-pets{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+// .container-my-pets{
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }
 
 .card-bookings {
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -67,5 +65,3 @@
 .fa-check::before {
   color: green;
 }
-
-
