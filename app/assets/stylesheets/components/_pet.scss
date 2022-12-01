@@ -24,7 +24,6 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
     text-decoration: none;
-
 }
 
 .pet-ad:hover .heart {
@@ -32,9 +31,7 @@
 }
 
 .pet-ad {
-  overflow: hidden;
   width: 200px;
-  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
 }
@@ -58,7 +55,6 @@
 }
 
 .pet-img-tag {
-  width: 100px;
   border-radius: 3px;
   object-fit: cover;
   height: 200px;

@@ -27,7 +27,7 @@
             <div class="col">
               <%= link_to pet_path(pet) do %>
                 <div class="pet-ad mb-3">
-                  <div id="carousel<%=pet.name%>" class="carousel slide" data-bs-ride="true">
+                  <div id="carousel<%=pet.name%>" class="carousel carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <%= cl_image_tag pet.photos.first.key, crop: :fill, class:"pet-img-tag d-block w-100" %>
@@ -45,7 +45,6 @@
                     <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=pet.name%>" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
-                    </button>
                   </div>
 
                   <div class="pet-infos">
