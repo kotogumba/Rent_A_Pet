@@ -52,3 +52,19 @@
     <%= booking.total_price %>
   <% end %>
 </div>
+
+<div class="container">
+<h1>Bookmarks</h1>
+  <%  if @bookmarks.empty? %>
+    <p>You have no bookmarks yet</p>
+  <% else %>
+    <% @bookmarks.each do |bookmark| %>
+      <div class="card-bookmarks">
+        <p><%= cl_image_tag bookmark.pet.photos.first.key, crop: :fill, class:"card-bookmarks-img" %></p>
+        <h2><%= bookmark.pet.name %></h2>
+        <p><%= link_to "View pet", pet_path(bookmark.pet), class: "btn btn-primary" %></p>
+        <%= button_to "Remove bookmark", bookmark_path(bookmark), method: :delete, class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

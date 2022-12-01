@@ -49,6 +49,9 @@
                   </div>
 
                   <div class="pet-infos">
+                      <%= link_to pet_bookmarks_path(pet), data: { "turbo-method": :post }, class: "heart" do %>
+                        <i class="fa-regular fa-heart"></i>
+                      <% end %>
                       <h1><%= pet.title %></h1>
                       <h2><%= pet.name %></h2>
                       <hr>

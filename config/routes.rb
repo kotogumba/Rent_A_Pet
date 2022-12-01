@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :pets do
     resources :bookings, only: [:create]
+    resources :bookmarks, only: [:create]
   end
   resources :bookings, only: [:show, :new, :update, :destroy]
   get "/dashboard", to: "pages#dashboard"
+  resources :bookmarks, only: [:new, :show, :destroy]
 end
