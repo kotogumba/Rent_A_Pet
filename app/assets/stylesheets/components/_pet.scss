@@ -31,14 +31,16 @@
 }
 
 .pet-ad {
-  width: 200px;
+
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  position: relative;
 }
 
 .pet-grid {
+  margin: 0 auto;
   padding: 16px 16px 16px 16px;
-  width: 100%;
+  width: 80%;
 }
 
 .pet-grid {
@@ -98,6 +100,6 @@
   color: white !important;
   position: absolute;
   top: 0;
-  right: 118px;
+  right: 8px;
   z-index: 10;
 }
