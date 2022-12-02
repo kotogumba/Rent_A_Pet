@@ -68,6 +68,9 @@
       </div>
     </div>
       <div class="row mt-3 mb-4 mx-4 d-flex">
+        <%= render "reviews/form", review: @review, pet: @pet%>
+      </div>
+      <div class="row mt-3 mb-4 mx-4 d-flex">
           <%= link_to "Back", pets_path, class: "btn btn1 bt my-1 mx-auto" %>
 
           <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn1 bt my-1 mx-auto" %>

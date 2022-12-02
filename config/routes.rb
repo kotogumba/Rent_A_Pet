@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources :pets do
     resources :bookings, only: [:create]
     resources :bookmarks, only: [:create]
+    resources :reviews, only: [:create]
   end
   resources :bookings, only: [:show, :new, :update, :destroy]
   get "/dashboard", to: "pages#dashboard"
   resources :bookmarks, only: [:new, :show, :destroy]
+  resources :reviews, only: [:new, :create]
 end
