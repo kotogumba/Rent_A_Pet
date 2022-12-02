@@ -5,5 +5,5 @@
   <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime", action: "change->flatpickr#input" } }, label: false, placeholder: "End Date" %>
   <%= f.submit 'Book', class: "btn btn-primary btn-lg btn-block btn-booking" %>
   <hr>
-  <p id="total-price" class="d-none" >Total price: <span data-flatpickr-target="totalPrice"></span>€</p>
+  <p id="total-price" class="d-none pt-3" >Total price: <span data-flatpickr-target="totalPrice" style="font-size: 20px; font-weight: 500;"></span><span style="font-size: 20px; font-weight:500;">€</span></p>
 <% end %>
