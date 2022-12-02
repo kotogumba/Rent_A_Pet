@@ -1,11 +1,11 @@
 .mapboxgl-popup {
-  border-radius: 25px;
-  height: 50px;
-  width: 50px;
+  color: $black;
+  
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-size: 10px;
   font-weight: bold;
+
 }
