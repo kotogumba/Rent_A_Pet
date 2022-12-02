@@ -1,9 +1,9 @@
-<div class="container pb-3">
+<div class="container pb-3 d-flex justify-content-center dash">
   <div class="d-flex align-items-start pt-3">
     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <button class="nav-link active button-tab" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">My Pets</button>
       <button class="nav-link button-tab" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">My Bookings</button>
-      <button class="nav-link button-tab" id="v-pills-bookmarks-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bookmarks" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Bookmarks</button>
+      <button class="nav-link button-tab" id="v-pills-bookmarks-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bookmarks" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Favourites</button>
     </div>
 
     <div class="tab-content border-left ps-3" id="v-pills-tabContent">
@@ -99,9 +99,9 @@
       <div class="tab-pane fade" id="v-pills-bookmarks" role="tabpanel" aria-labelledby="v-pills-bookmarks-tab" tabindex="2">
         <div class="container">
           <%  if @bookmarks.empty? %>
-            <p>You have no bookmarks yet</p>
+            <p>You have no favourites yet</p>
           <% else %>
-            <h1>Bookmarks</h1>
+            <h1>Favourites</h1>
             <div class="row row-cols-auto">
               <% @bookmarks.each do |bookmark| %>
                   <div class="col">

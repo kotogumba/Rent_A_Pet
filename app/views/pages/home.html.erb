@@ -1,24 +1,24 @@
-<div class="container">
+
   <div id="rail" class="carousel slide center" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%=image_tag 'cat.jpg', class: "d-block w-100", style: "height: 900px; object-fit: cover;" %>
+        <%=image_tag 'pug.jpg', class: "d-block w-100 carousel-home" %>
       </div>
       <div class="carousel-item">
-        <%=image_tag 'dog_friend.jpg', class: "d-block w-100", style: "height: 900px; object-fit: cover;" %>
+        <%=image_tag 'cat.jpg', class: "d-block w-100 carousel-home" %>
       </div>
       <div class="carousel-item">
-        <%=image_tag 'pug.jpg', class: "d-block w-100", style: "height: 900px; object-fit: cover;" %>
+        <%=image_tag 'dog_friend.jpg', class: "d-block w-100 carousel-home" %>
       </div>
-       <div class="carousel-item">
-        <%=image_tag 'cat_2.jpg', class: "d-block w-100", style: "height: 900px; object-fit: cover;" %>
+        <div class="carousel-item">
+        <%=image_tag 'cat_2.jpg', class: "d-block w-100 carousel-home" %>
       </div>
     </div>
     <div class="button d-flex flex-column">
       <%= link_to "Find a pet", pets_path, class: "btn btn-outline-dark pet" %>
     </div>
   </div>
-
+<div class="container">
   <h2 class="text-center p-3 mt-2" id="how-it-works">How it works</h2>
   <div class="card-category">
     <div class="card border-0">
@@ -41,5 +41,9 @@
         <p class="card-text">Spend time with your new furry friend</p>
       </div>
     </div>
+  </div>
+  <div class="text">
+  <p>If you love animals but don't have the time to take care of a pet every day, try renting a pet via Rent A Pet. It allows you to pick a pet near to you and rent it for a couple of days.</p>
+  <p>Do you own a pet and want it to have more friends? Try renting it out though Rent A Pet. It's a perfect way to increase your pets social circle or find a pet sitter if you go on a holiday.</p>
   </div>
 </div>
