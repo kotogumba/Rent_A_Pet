@@ -11,18 +11,18 @@ require "open-uri"
 Pet.destroy_all
 User.destroy_all
 
-5.times do
+20.times do
   User.create(
     first_name: Faker::Internet.username,
     last_name: Faker::BossaNova.artist,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    address: Faker::Address.street_address,
+    address: Faker::Address.city,
     phone_number: Faker::Barcode.ean
   )
 end
 
-5.times do
+20.times do
   pet = Pet.new(
     title: Faker::Creature::Dog.meme_phrase,
     name: Faker::Creature::Dog.name,
@@ -32,6 +32,8 @@ end
     description: Faker::Creature::Dog.meme_phrase,
   )
   pet.user = User.all.sample
+  pet.latitude = Faker::Address.latitude
+  pet.longitude = Faker::Address.longitude
   file = URI.open("https://loremflickr.com/320/240/dog")
   pet.photos.attach(io: file, filename: "#{pet.name}.jpeg", content_type: "image/jpeg")
   pet.save!
