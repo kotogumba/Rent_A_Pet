@@ -1,5 +1,13 @@
-// Specific CSS for your home-page
+.carousel-home {
+  height: 550px;
+  object-fit: cover;
+}
 
+.pet {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 10px 30px;
+}
 .cards {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -21,4 +29,14 @@
   width: 100vw;
   margin: 0 auto;
   overflow-x: hidden;
+}
+
+.text {
+  margin-top: 50px;
+  padding: 50px 200px;
+  text-align: center;
+  line-height: 200%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.2);
 }
