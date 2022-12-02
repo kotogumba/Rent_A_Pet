@@ -18,12 +18,16 @@
        <% if @query %>
           <p>You searched for <strong><%= @query %></strong>. We found <%= @pets.count %> pets matching your query on our website.</p>
         <% else %>
-          <p>Find your new furry friend amongst our <%= @pets.count %> pets</p>
+
+          <h1>Find your new furry friend among our <%= @pets.count %> pets</h1>
         <% end %>
 
-        <div class="row row-cols-auto">
+
+        <div class="row">
           <% @pets.each do |pet| %>
-            <div class="col">
+
+        <div class="co-12 col-sm-6 col-md-3 mb-3">
+
               <%= link_to pet_path(pet) do %>
                 <div class="pet-ad mb-3">
                   <div id="carousel<%=pet.name%>" class="carousel carousel-fade" data-bs-ride="carousel">
@@ -62,5 +66,11 @@
         </div>
     </div>
   </div>
+
+  <div style="width: 100%; height: 300px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
       <button class="button-map">Show on map <i class="fa-regular fa-map"></i><%= link_to "", pets_path %></button>
 </div>

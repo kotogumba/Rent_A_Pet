@@ -9,6 +9,15 @@ class PetsController < ApplicationController
     else
       @pets = Pet.all
     end
+
+    @markers = Pet.all.geocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { pet: pet }),
+        image_url: helpers.asset_url("paw_vector.png")
+      }
+    end
   end
 
   def show
@@ -32,6 +41,7 @@ class PetsController < ApplicationController
 
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+    @pet.address = current_user.address
 
     respond_to do |format|
       if @pet.save
