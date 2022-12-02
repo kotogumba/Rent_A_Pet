@@ -14,7 +14,7 @@
 }
 
 .home-bar {
-  a{
+  a {
     text-decoration: none;
     color: #0E0000;
   }
@@ -24,12 +24,14 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
     text-decoration: none;
+}
 
+.pet-ad:hover .heart {
+  right: 8px;
 }
 
 .pet-ad {
-  overflow: hidden;
-  background: white;
+  width: 200px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
 }
@@ -45,11 +47,15 @@
     font-family: "CircularStd-Black", "Helvetica", "sans-serif";
     font-size: 16px;
   }
+
+  a {
+    text-decoration: none;
+    color: #0E0000;
+  }
 }
 
 .pet-img-tag {
-  width: 100%;
-  border-radius: 10px;
+  border-radius: 3px;
   object-fit: cover;
   height: 200px;
 }
@@ -86,4 +92,12 @@
 
 .a {
     text-decoration: none !important;
+}
+
+.heart {
+  color: white !important;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 10;
 }

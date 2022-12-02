@@ -26,6 +26,7 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
+    @bookmark = Bookmark.new
   end
 
   def edit
@@ -37,6 +38,7 @@ class PetsController < ApplicationController
   end
 
   def create
+
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     @pet.address = current_user.address
