@@ -19,7 +19,7 @@
           <p>You searched for <strong><%= @query %></strong>. We found <%= @pets.count %> pets matching your query on our website.</p>
         <% else %>
 
-          <h1>Find your new furry friend among our <%= @pets.count %> pets</h1>
+          <p>Find your new furry friend among our <strong><%= @pets.count %></strong> pets</p>
         <% end %>
 
 
@@ -54,10 +54,10 @@
                       <%= link_to pet_bookmarks_path(pet), data: { "turbo-method": :post }, class: "heart" do %>
                         <i class="fa-regular fa-heart"></i>
                       <% end %>
-                      <h1><%= pet.title %></h1>
-                      <h2><%= pet.name %></h2>
+                      <p><%= pet.title %></p>
+                      <h3><%= pet.name %></h3>
                       <hr>
-                      <p><%= pet.price %>&euro; day</p>
+                      <p><span style="font-weight: 700;"><%= pet.price %>&euro;</span> day</p>
                   </div>
                 </div>
               <% end %>
