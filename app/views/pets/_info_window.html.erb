@@ -1,1 +1,4 @@
-<p><%= pet.price %>&euro;</p>
+<p class="p-0 m-0"><%=  link_to "#{pet.name}", pet_path(pet), style: "text-decoration: none; color: black;" %></p>
+<p class="p-0 m-0"><%= pet.price %>&euro;</p>
+<%= cl_image_tag pet.photos.first.key, width: 50, height: 50, crop: :fill, class:"card-bookings-img" %>
+<p class="p-0 m-0"><%=  link_to "more", pet_path(pet), style: "text-decoration: none; color: blue;" %></p>
